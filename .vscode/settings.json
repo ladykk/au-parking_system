@@ -1,0 +1,6 @@
+{
+  "python.analysis.extraPaths": [
+    "./bin/yolov5",
+    "./utils"
+  ]
+}
