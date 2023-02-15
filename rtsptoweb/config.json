@@ -1,0 +1,54 @@
+{
+  "server": {
+    "debug": true,
+    "http_debug": false,
+    "http_demo": true,
+    "http_dir": "web",
+    "http_login": "admin",
+    "http_password": "a1234567",
+    "http_port": ":8083",
+    "https": false,
+    "https_auto_tls": false,
+    "https_auto_tls_name": "",
+    "https_cert": "server.crt",
+    "https_key": "server.key",
+    "https_port": ":443",
+    "ice_servers": ["stun:stun.l.google.com:19302"],
+    "log_level": "debug",
+    "rtsp_port": ":5541",
+    "defaults": {
+      "audio": false
+    }
+  },
+  "streams": {
+    "entrance": {
+      "name": "Entrance",
+      "channels": {
+        "0": {
+          "name": "main",
+          "url": "rtsp://admin:a1234567@10.0.0.100:554/Streaming/Channels/101/",
+          "on_demand": true,
+          "debug": false,
+          "audio": false,
+          "status": 0
+        }
+      }
+    },
+    "exit": {
+      "name": "Exit",
+      "channels": {
+        "0": {
+          "name": "main",
+          "url": "rtsp://admin:a1234567@10.0.0.100:554/Streaming/Channels/201/",
+          "on_demand": true,
+          "debug": false,
+          "audio": false,
+          "status": 0
+        }
+      }
+    }
+  },
+  "channel_defaults": {
+    "on_demand": true
+  }
+}
