@@ -133,7 +133,7 @@ class Transaction(object):
         if image is not None:
             info.update({"image_in": image})
         # Add transaction.
-        update_time, ref = Transaction.transactions_ref.add(info)
+        update_time, ref = Transaction.ref.add(info)
         Transaction._logger.info(
             f'Transaction added. [License number: {license_number} | TID: {ref.id}]')
         return True, ref.id

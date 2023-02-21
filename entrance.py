@@ -9,7 +9,7 @@ class EntranceState(State):
 
     def __init__(self, dev=False):
         super().__init__('entrance', init_state='idle',
-                         source="0" if dev else ENTRANCE_SOURCE)
+                         source="1" if dev else ENTRANCE_SOURCE)
         self.alpr.start()
 
     # [S0]: Idle

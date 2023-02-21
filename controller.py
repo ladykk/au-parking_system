@@ -147,8 +147,8 @@ class ControllerClient:
             self.b_close = True if variables[2] == '1' else False
             self.k_button = True if variables[3] == '1' else False
             self.p_barricade = True if variables[4] == '1' else False
-            self.k_sensor = int(variables[5])
-            self.p_sensor = int(variables[6])
+            self.k_sensor = int(variables[5]) if int(variables[5]) is int else self.k_sensor
+            self.p_sensor = int(variables[6]) if int(variables[6]) is int else self.p_sensor
         except UnicodeDecodeError:
             self._logger.warning('Cannot read input for this line.')
         except IndexError:

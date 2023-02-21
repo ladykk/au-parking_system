@@ -180,7 +180,7 @@ def inference(
                 iminput = cv2.equalizeHist(
                     cv2.cvtColor(iminput, cv2.COLOR_BGR2GRAY))
                 ocr_outputs = reader.readtext(
-                    iminput, add_margin=0.3, width_ths=0.9)
+                    iminput, add_margin=0.3, width_ths=0.9, allowlist="0123456789กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรลวศษสหฬอฮ")
                 imocr = iminput.copy()
                 texts = []
                 boxes = []
@@ -189,7 +189,6 @@ def inference(
                     if prob > 0.1:
                         texts.append(text)
                         boxes.append({'bbox': bbox, 'chosen': False})
-
                 # Step 3.5: Check pattern license number pattern.
                 filtered_texts = []  # limit 2 texts
                 for i, text in enumerate(texts):  # ignore province.
