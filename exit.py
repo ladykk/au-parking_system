@@ -118,7 +118,7 @@ class ExitState(State):
 
     def _success(self):  # > Logic
       # Update is_car_pass when detected car at first time.
-        if self.controller.p_has_car is False and self.info.get("is_car_pass") is False:
+        if self.controller.p_has_car is True and self.info.get("is_car_pass") is False:
             self.info.update({"is_car_pass": True})
 
         # > Next state
